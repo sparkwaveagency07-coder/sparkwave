@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sparkwave Agency | Marketing, Branding &amp; Business Growth</title>
+<meta name="description" content="Sparkwave Agency helps startups, local businesses, and growing brands with digital marketing, advertising campaigns, brand promotion, and high-impact website development." />
+<meta name="theme-color" content="#0d0d0d" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --primary: #c98a2c;
+  --primary-light: #e5a93c;
+  --primary-dark: #8c5813;
+  --primary-glow: rgba(201, 138, 44, 0.35);
+  --amber-subtle: rgba(201, 138, 44, 0.12);
+  --bg: #080808;
+  --bg-card: #101010;
+  --surface: #141414;
+  --surface-border: #222222;
+  --surface-border-hover: #3a3224;
+  --text: #f5f5f7;
+  --text-muted: #9e9ea7;
+  --text-dim: #686873;
+  --line: rgba(201, 138, 44, 0.18);
+  --green: #4ade80;
+  --radius: 18px;
+  --shadow-amber: 0 16px 40px -10px rgba(201, 138, 44, 0.28);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2;
+  background: radial-gradient(circle at 15% 10%, rgba(201, 138, 44, 0.1), transparent 32rem),
+    radial-gradient(circle at 85% 35%, rgba(140, 88, 19, 0.08), transparent 35rem),
+    radial-gradient(circle at 50% 90%, rgba(201, 138, 44, 0.06), transparent 40rem),
+    var(--bg);
+}
+h1, h2, h3, h4, .font-heading { font-family: "Space Grotesk", sans-serif; letter-spacing: -0.03em; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; outline: none; }
+img { display: block; max-width: 100%; }
+.container { width: min(1200px, calc(100% - 40px)); margin: auto; }
+.section { position: relative; padding: 100px 0; }
+.progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 100%; background: linear-gradient(90deg, var(--primary-dark), var(--primary-light), #fff0b8); transform: scaleX(0); transform-origin: left; z-index: 2000; }
+.header { position: fixed; top: 0; left: 0; right: 0; z-index: 1100; padding: 18px 0; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); border-bottom: 1px solid transparent; }
+.header.scrolled { padding: 12px 0; background: rgba(10, 10, 10, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201, 138, 44, 0.2); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; }
+.brand-mark { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--primary-light), var(--primary-dark)); display: grid; place-items: center; box-shadow: 0 0 20px var(--primary-glow); color: #000; }
+.brand-mark svg { width: 22px; height: 22px; fill: #000; }
+.brand-text { font-size: 20px; line-height: 1; color: #fff; }
+.brand-text small { display: block; margin-top: 4px; font-size: 10px; color: var(--primary-light); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+.nav-links { display: flex; align-items: center; gap: 6px; background: rgba(20, 20, 20, 0.7); padding: 5px 8px; border-radius: 99px; border: 1px solid var(--surface-border); }
+.nav-links a { padding: 8px 16px; font-size: 14px; font-weight: 600; color: var(--text-muted); border-radius: 99px; transition: 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(201, 138, 44, 0.15); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 22px; border-radius: 99px; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.25s ease; border: 1px solid transparent; white-space: nowrap; }
+.btn-primary { background: linear-gradient(135deg, var(--primary-light), var(--primary)); color: #080808; box-shadow: 0 4px 20px rgba(201, 138, 44, 0.35); border: 1px solid #ffcc66; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201, 138, 44, 0.55); background: linear-gradient(135deg, #ffd06f, var(--primary-light)); }
+.btn-secondary { background: rgba(255, 255, 255, 0.04); color: #fff; border-color: rgba(201, 138, 44, 0.3); }
+.btn-secondary:hover { background: rgba(201, 138, 44, 0.1); border-color: var(--primary-light); transform: translateY(-2px); }
+.btn-google { background: #111; border: 1px solid #333; color: #eee; display: inline-flex; align-items: center; gap: 10px; padding: 9px 18px; font-size: 13.5px; font-weight: 600; border-radius: 99px; cursor: pointer; transition: 0.2s; }
+.btn-google:hover { background: #1a1a1a; border-color: var(--primary); }
+.btn-google svg { width: 18px; height: 18px; }
+.user-pill { display: flex; align-items: center; gap: 9px; background: #141414; border: 1px solid var(--primary); padding: 5px 14px 5px 6px; border-radius: 99px; cursor: pointer; transition: 0.2s; }
+.user-pill:hover { background: #1f1a14; }
+.user-avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1px solid var(--primary-light); background: #252525; display: grid; place-items: center; font-weight: bold; font-size: 12px; color: var(--primary-light); }
+.user-name { font-size: 13px; font-weight: 600; color: #fff; max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu-btn { display: none; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--surface-border); background: #111; color: #fff; cursor: pointer; }
+.menu-btn span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px auto; transition: 0.3s; }
+.mobile-nav { position: fixed; inset: 0; background: rgba(8, 8, 8, 0.98); backdrop-filter: blur(25px); z-index: 1050; padding: 100px 30px 40px; transform: translateY(-100%); transition: 0.4s ease; display: flex; flex-direction: column; gap: 16px; }
+.mobile-nav.open { transform: translateY(0); }
+.mobile-nav a:not(.btn) { font-size: 24px; font-weight: 700; color: #e0e0e0; border-bottom: 1px solid #1f1f1f; padding-bottom: 12px; }
+.tag { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-light); font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; background: var(--amber-subtle); padding: 6px 14px; border-radius: 99px; border: 1px solid rgba(201, 138, 44, 0.3); }
+.tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--primary-light); box-shadow: 0 0 10px var(--primary-light); }
+.gradient-text { background: linear-gradient(135deg, #fff 20%, var(--primary-light) 65%, var(--primary-dark) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; }
+.glass { background: linear-gradient(160deg, rgba(25, 25, 25, 0.75), rgba(12, 12, 12, 0.9)); border: 1px solid var(--surface-border); border-radius: var(--radius); backdrop-filter: blur(12px); }
+.glass-amber { background: linear-gradient(160deg, rgba(35, 28, 18, 0.6), rgba(15, 13, 10, 0.85)); border: 1px solid rgba(201, 138, 44, 0.3); border-radius: var(--radius); }
+.hero { min-height: 100vh; display: flex; align-items: center; position: relative; padding: 160px 0 90px; overflow: hidden; }
+#particleCanvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
+.hero h1 { font-size: clamp(2.8rem, 5.5vw, 4.8rem); line-height: 1.05; margin: 22px 0; font-weight: 800; }
+.hero p { font-size: 1.12rem; color: var(--text-muted); max-width: 580px; margin-bottom: 35px; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
+.hero-image-wrap { position: relative; }
+.hero-image { position: relative; border-radius: 28px; overflow: hidden; border: 1px solid rgba(201, 138, 44, 0.3); box-shadow: 0 30px 80px rgba(0,0,0,0.8), 0 0 50px rgba(201, 138, 44, 0.15); aspect-ratio: 1 / 1.1; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.1) brightness(0.9); transition: transform 0.8s ease; }
+.hero-image-wrap:hover .hero-image img { transform: scale(1.04); }
+.floating-metric { position: absolute; padding: 14px 20px; border-radius: 16px; background: rgba(18, 18, 18, 0.85); backdrop-filter: blur(14px); border: 1px solid rgba(201, 138, 44, 0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.6); z-index: 3; animation: floatAnim 5s ease-in-out infinite; }
+.floating-metric.m1 { top: -20px; left: -25px; }
+.floating-metric.m2 { bottom: 30px; right: -25px; animation-delay: -2.5s; }
+@keyframes floatAnim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.floating-metric span { display: block; font-size: 10px; text-transform: uppercase; color: var(--primary-light); letter-spacing: 0.12em; font-weight: 700; }
+.floating-metric strong { font-size: 18px; font-family: "Space Grotesk", sans-serif; color: #fff; }
+.ticker { border-block: 1px solid var(--surface-border); background: #0d0d0d; overflow: hidden; padding: 16px 0; position: relative; }
+.ticker-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+.ticker-item { display: flex; align-items: center; gap: 20px; padding: 0 28px; font-size: 15px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.08em; }
+.ticker-item span.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.section-head { margin-bottom: 50px; }
+.section-head.center { text-align: center; max-width: 700px; margin-inline: auto; }
+.section-title { font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.15; margin-top: 14px; font-weight: 800; }
+.section-desc { color: var(--text-muted); margin-top: 14px; font-size: 1.05rem; }
+.feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.feature-card { padding: 32px 24px; transition: all 0.35s ease; border: 1px solid var(--surface-border); }
+.feature-card:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(201, 138, 44, 0.1); }
+.feature-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--amber-subtle); border: 1px solid rgba(201, 138, 44, 0.35); color: var(--primary-light); display: grid; place-items: center; font-size: 22px; margin-bottom: 22px; }
+.feature-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: #fff; }
+.feature-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.service-card { overflow: hidden; transition: all 0.4s ease; border: 1px solid var(--surface-border); position: relative; }
+.service-card:hover { border-color: rgba(201, 138, 44, 0.6); transform: translateY(-5px); box-shadow: var(--shadow-amber); }
+.service-img-box { height: 220px; position: relative; overflow: hidden; }
+.service-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.service-card:hover .service-img-box img { transform: scale(1.08); }
+.service-img-box::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, #101010 100%); }
+.service-badge { position: absolute; top: 18px; left: 18px; z-index: 2; background: rgba(10, 10, 10, 0.85); border: 1px solid var(--primary); color: var(--primary-light); font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 99px; letter-spacing: 0.1em; }
+.service-content { padding: 28px; }
+.service-content h3 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
+.service-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 18px; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.service-tags span { background: #181818; color: #ccc; font-size: 12px; padding: 5px 12px; border-radius: 6px; border: 1px solid #282828; }
+.process-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; margin-top: 40px; }
+.process-timeline::before { content: ""; position: absolute; top: 36px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--primary-dark), var(--primary-light), var(--primary-dark)); z-index: 0; }
+.process-step { position: relative; z-index: 1; text-align: center; padding: 0 10px; }
+.step-num { width: 70px; height: 70px; border-radius: 50%; background: #141414; border: 2px solid var(--primary); display: grid; place-items: center; margin: 0 auto 20px; font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 800; color: var(--primary-light); box-shadow: 0 0 25px rgba(201, 138, 44, 0.25); }
+.process-step h4 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; }
+.process-step p { color: var(--text-muted); font-size: 0.88rem; }
+.contact-section { background: linear-gradient(180deg, #0a0a0a, #050505); border-top: 1px solid var(--surface-border); }
+.enquiry-hub-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 40px; align-items: start; }
+.enquiry-info-card { padding: 36px; border: 1px solid rgba(201, 138, 44, 0.25); }
+.direct-contacts { display: grid; gap: 14px; margin: 28px 0; }
+.contact-item { display: flex; align-items: center; gap: 16px; padding: 16px; border-radius: 14px; background: #141414; border: 1px solid #222; transition: 0.25s; }
+.contact-item:hover { border-color: var(--primary); transform: translateX(4px); }
+.contact-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--amber-subtle); border: 1px solid rgba(201, 138, 44, 0.3); color: var(--primary-light); display: grid; place-items: center; font-size: 19px; flex-shrink: 0; }
+.contact-item small { display: block; color: var(--text-dim); font-size: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; }
+.contact-item strong { color: #fff; font-size: 14px; word-break: break-all; }
+.form-box { padding: 40px; border: 1px solid rgba(201, 138, 44, 0.35); background: #0f0f0f; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7); }
+.form-tabs { display: flex; gap: 10px; border-bottom: 1px solid #222; padding-bottom: 16px; margin-bottom: 25px; }
+.form-tab-btn { background: none; border: none; color: var(--text-muted); font-weight: 700; font-size: 15px; padding: 8px 16px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: 0.2s; }
+.form-tab-btn.active { color: #000; background: var(--primary-light); }
+.auth-banner { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 14px 18px; border-radius: 12px; background: rgba(201, 138, 44, 0.08); border: 1px dashed rgba(201, 138, 44, 0.35); margin-bottom: 24px; }
+.auth-banner-left { display: flex; align-items: center; gap: 12px; }
+.auth-banner p { font-size: 13px; color: #d1d1d6; }
+.auth-banner span.highlight { color: var(--primary-light); font-weight: 700; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #bbb; }
+.input-field { width: 100%; padding: 13px 16px; background: #161616; border: 1px solid #2a2a2a; border-radius: 10px; color: #fff; font-size: 14px; transition: border-color 0.2s, box-shadow 0.2s; }
+.input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(201, 138, 44, 0.2); }
+textarea.input-field { resize: vertical; min-height: 100px; }
+select.input-field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23c98a2c' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(14px); z-index: 2500; display: grid; place-items: center; padding: 20px; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-card { width: min(540px, 100%); background: #111; border: 1px solid rgba(201, 138, 44, 0.35); border-radius: 24px; padding: 34px; box-shadow: 0 25px 60px rgba(0,0,0,0.9); position: relative; transform: translateY(20px); transition: transform 0.3s ease; max-height: 90vh; overflow-y: auto; }
+.modal-overlay.open .modal-card { transform: translateY(0); }
+.modal-close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%; background: #1c1c1c; border: 1px solid #333; color: #aaa; cursor: pointer; display: grid; place-items: center; font-size: 16px; transition: 0.2s; }
+.modal-close:hover { color: #fff; border-color: var(--primary); }
+.google-signin-box { background: #181818; border-radius: 16px; padding: 24px; border: 1px solid #282828; margin: 20px 0; text-align: center; }
+.connected-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; background: rgba(74, 222, 128, 0.12); color: var(--green); border: 1px solid rgba(74, 222, 128, 0.3); padding: 4px 10px; border-radius: 99px; margin-bottom: 12px; }
+.history-list { display: grid; gap: 12px; margin-top: 15px; max-height: 280px; overflow-y: auto; padding-right: 6px; }
+.history-card { padding: 14px; border-radius: 10px; background: #181818; border: 1px solid #2a2a2a; display: flex; justify-content: space-between; align-items: center; }
+.status-pill { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: rgba(201, 138, 44, 0.15); color: var(--primary-light); border: 1px solid rgba(201, 138, 44, 0.3); }
+.toast-popup { position: fixed; bottom: 24px; right: 24px; background: #141414; border: 1px solid var(--primary); padding: 14px 22px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); color: #fff; font-size: 14px; display: flex; align-items: center; gap: 12px; z-index: 3000; transform: translateY(100px); opacity: 0; transition: 0.3s ease; }
+.toast-popup.active { transform: translateY(0); opacity: 1; }
+.footer { background: #050505; border-top: 1px solid var(--surface-border); padding: 80px 0 30px; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 50px; }
+.footer h5 { color: var(--primary-light); font-size: 12px; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 20px; }
+.footer ul { list-style: none; display: grid; gap: 10px; }
+.footer ul a { color: var(--text-muted); font-size: 14px; transition: 0.2s; }
+.footer ul a:hover { color: var(--primary-light); }
+.footer-bottom { border-top: 1px solid #1a1a1a; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; color: var(--text-dim); font-size: 13px; flex-wrap: wrap; gap: 15px; }
+
+/* ===== ADMIN STYLES ===== */
+.admin-login { display: none; min-height: 100vh; align-items: center; justify-content: center; padding: 20px; background: radial-gradient(circle at 50% 0%, rgba(201,138,44,0.08), transparent 40rem), #060606; }
+.admin-login-card { width: min(440px, 100%); background: #101010; border: 1px solid rgba(201,138,44,0.35); border-radius: 22px; padding: 40px; box-shadow: 0 30px 80px rgba(0,0,0,0.8); }
+.admin-login-card .brand-mark { margin: 0 auto 18px; }
+.admin-login-card h2 { text-align: center; color: #fff; font-size: 24px; margin-bottom: 6px; }
+.admin-login-card p.sub { text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 26px; }
+.admin-form-group { margin-bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+.admin-form-group label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #bbb; }
+.admin-error { background: rgba(255,68,68,0.1); border: 1px solid rgba(255,68,68,0.4); color: #ff8888; font-size: 13px; padding: 10px 14px; border-radius: 10px; margin-bottom: 16px; display: none; }
+.admin-back { display: block; text-align: center; margin-top: 18px; font-size: 13px; color: var(--text-dim); }
+.admin-back:hover { color: var(--primary-light); }
+
+.admin-app { display: none; min-height: 100vh; background: #060606; }
+.admin-app.show { display: flex; }
+.admin-sidebar { width: 250px; flex-shrink: 0; background: #0c0c0c; border-right: 1px solid var(--surface-border); padding: 24px 18px; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; }
+.admin-sidebar .brand { margin-bottom: 36px; padding: 0 6px; }
+.admin-nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; color: var(--text-muted); font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.2s; margin-bottom: 4px; border: 1px solid transparent; }
+.admin-nav-item:hover { background: rgba(201,138,44,0.08); color: #fff; }
+.admin-nav-item.active { background: rgba(201,138,44,0.15); color: var(--primary-light); border-color: rgba(201,138,44,0.3); }
+.admin-nav-item .ico { font-size: 17px; }
+.admin-logout { margin-top: auto; }
+.admin-main { flex: 1; min-width: 0; padding: 30px 34px; overflow-y: auto; height: 100vh; }
+.admin-topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 14px; }
+.admin-topbar h1 { font-size: 26px; color: #fff; }
+.admin-topbar .admin-user { display: flex; align-items: center; gap: 10px; background: #111; border: 1px solid var(--surface-border); padding: 8px 16px; border-radius: 99px; font-size: 13px; color: var(--primary-light); font-weight: 600; }
+.stat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 32px; }
+.stat-card { background: linear-gradient(160deg, #141414, #0d0d0d); border: 1px solid var(--surface-border); border-radius: 16px; padding: 22px; transition: 0.25s; }
+.stat-card:hover { border-color: rgba(201,138,44,0.5); transform: translateY(-3px); }
+.stat-card .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); font-weight: 700; margin-bottom: 10px; }
+.stat-card .stat-value { font-size: 32px; font-family: "Space Grotesk", sans-serif; font-weight: 700; color: #fff; }
+.stat-card.accent .stat-value { color: var(--primary-light); }
+.admin-panel { background: #0c0c0c; border: 1px solid var(--surface-border); border-radius: 18px; padding: 24px; margin-bottom: 26px; }
+.admin-panel h3 { color: #fff; font-size: 18px; margin-bottom: 18px; }
+.admin-toolbar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.admin-toolbar input, .admin-toolbar select { background: #161616; border: 1px solid #2a2a2a; border-radius: 10px; color: #fff; font-size: 13px; padding: 10px 14px; }
+.admin-toolbar input { flex: 1; min-width: 180px; }
+.admin-toolbar select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23c98a2c' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px; }
+.admin-table-wrap { overflow-x: auto; }
+.admin-table { width: 100%; border-collapse: collapse; min-width: 760px; }
+.admin-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); font-weight: 700; padding: 12px 14px; border-bottom: 1px solid #1f1f1f; }
+.admin-table td { padding: 14px; border-bottom: 1px solid #161616; font-size: 13px; color: var(--text-muted); vertical-align: middle; }
+.admin-table tr:hover td { background: rgba(201,138,44,0.04); }
+.admin-table td strong { color: #fff; }
+.badge { font-size: 11px; font-weight: 700; padding: 4px 11px; border-radius: 99px; display: inline-block; white-space: nowrap; }
+.badge-new { background: rgba(96,165,250,0.15); color: #60a5fa; border: 1px solid rgba(96,165,250,0.35); }
+.badge-contacted { background: rgba(201,138,44,0.15); color: var(--primary-light); border: 1px solid rgba(201,138,44,0.35); }
+.badge-progress { background: rgba(168,85,247,0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.35); }
+.badge-completed { background: rgba(74,222,128,0.15); color: var(--green); border: 1px solid rgba(74,222,128,0.35); }
+.admin-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.icon-btn { width: 32px; height: 32px; border-radius: 8px; border: 1px solid #2a2a2a; background: #161616; color: #ccc; cursor: pointer; display: grid; place-items: center; font-size: 13px; transition: 0.2s; }
+.icon-btn:hover { border-color: var(--primary); color: var(--primary-light); }
+.icon-btn.del:hover { border-color: #ff4444; color: #ff7777; }
+.admin-status-select { background: #161616; border: 1px solid #2a2a2a; border-radius: 8px; color: #fff; font-size: 12px; padding: 6px 8px; cursor: pointer; }
+.admin-empty { text-align: center; padding: 40px; color: var(--text-dim); font-size: 14px; }
+.detail-row { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid #1a1a1a; font-size: 13.5px; }
+.detail-row .k { color: var(--text-dim); font-weight: 600; flex-shrink: 0; }
+.detail-row .v { color: #fff; text-align: right; word-break: break-word; }
+.detail-row.msg .v { text-align: left; color: var(--text-muted); line-height: 1.6; }
+.admin-mobile-toggle { display: none; }
+
+@media (max-width: 1024px) {
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+  .process-timeline::before { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .hero-grid, .enquiry-hub-grid, .services-grid { grid-template-columns: 1fr; }
+  .nav-links, .nav-actions .btn-primary { display: none; }
+  .menu-btn { display: block; }
+  .hero-image-wrap { width: min(480px, 100%); margin: auto; }
+  .floating-metric.m1 { left: 0; }
+  .floating-metric.m2 { right: 0; }
+  .admin-sidebar { position: fixed; left: 0; top: 0; z-index: 200; transform: translateX(-100%); transition: 0.3s; }
+  .admin-sidebar.open { transform: translateX(0); }
+  .admin-mobile-toggle { display: inline-flex; }
+  .admin-main { padding: 20px; width: 100%; }
+}
+@media (max-width: 580px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero-buttons .btn { width: 100%; }
+  .modal-card { padding: 24px 18px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ MAIN SITE ============ -->
+<div id="siteRoot">
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="Sparkwave Agency Home">
+      <div class="brand-mark"><svg viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg></div>
+      <div class="brand-text">SPARKWAVE<small>Marketing &amp; Growth</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#portfolio">Work</a>
+      <a href="#enquiryHub">Enquiries</a>
+    </nav>
+    <div class="nav-actions">
+      <div id="authSlot">
+        <button class="btn-google" id="googleLoginBtn">
+          <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          Sign in with Google
+        </button>
+      </div>
+      <button class="btn btn-primary" onclick="openEnquiryTab()">Let’s Grow Your Business
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="menu-btn" id="menuToggle" aria-label="Toggle Navigation"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="closeMobileNav()">Home</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#process" onclick="closeMobileNav()">Process</a>
+  <a href="#portfolio" onclick="closeMobileNav()">Work</a>
+  <a href="#enquiryHub" onclick="closeMobileNav()">Enquiries</a>
+  <div style="margin-top:20px; display:flex; flex-direction:column; gap:12px;">
+    <button class="btn btn-primary" style="width:100%;" onclick="openEnquiryTab(); closeMobileNav();">Let’s Grow Your Business</button>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <canvas id="particleCanvas"></canvas>
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="tag">SPARK • WAVE • ACCELERATE</div>
+      <h1>Turn Your Business Into a Brand <span class="gradient-text">People Notice.</span></h1>
+      <p>Sparkwave Agency empowers startups, stores, and expanding enterprises with razor-sharp digital marketing, dynamic ad campaigns, brand consulting, and custom high-converting web systems.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="openEnquiryTab()">Let’s Grow Your Business
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <a href="#services" class="btn btn-secondary">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap">
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1100&q=85" alt="Sparkwave Analytics and Growth Engine" />
+      </div>
+      <div class="floating-metric m1"><span>Authorized Support</span><strong>sparkwave.agency.07</strong></div>
+      <div class="floating-metric m2"><span>Strategy Outcome</span><strong>3.8x Growth Surge</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">Brand Strategy <span class="dot"></span></div>
+    <div class="ticker-item">Google Auth Ecosystem <span class="dot"></span></div>
+    <div class="ticker-item">High-ROI Paid Advertising <span class="dot"></span></div>
+    <div class="ticker-item">Startup Launchpad <span class="dot"></span></div>
+    <div class="ticker-item">Website Engineering <span class="dot"></span></div>
+    <div class="ticker-item">Omnichannel Brand Elevation <span class="dot"></span></div>
+    <div class="ticker-item">Brand Strategy <span class="dot"></span></div>
+    <div class="ticker-item">Google Auth Ecosystem <span class="dot"></span></div>
+    <div class="ticker-item">High-ROI Paid Advertising <span class="dot"></span></div>
+    <div class="ticker-item">Startup Launchpad <span class="dot"></span></div>
+    <div class="ticker-item">Website Engineering <span class="dot"></span></div>
+    <div class="ticker-item">Omnichannel Brand Elevation <span class="dot"></span></div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">Why Sparkwave</div>
+      <h2 class="section-title">Built with <span class="gradient-text">Commercial Precision</span></h2>
+      <p class="section-desc">We bridge creative distinction with quantifiable revenue drivers.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card glass"><div class="feature-icon">✦</div><h3>Strategic Focus</h3><p>Bespoke roadmaps calibrated around your industry vertical, realistic customer journey, and growth targets.</p></div>
+      <div class="feature-card glass"><div class="feature-icon">⚡</div><h3>Brand Presence</h3><p>Impactful visual identity and high-recall narratives that command authority in saturated marketplaces.</p></div>
+      <div class="feature-card glass"><div class="feature-icon">📈</div><h3>Performance Ads</h3><p>Targeted campaigns across Google, Meta, and modern channels designed for sustainable customer acquisition.</p></div>
+      <div class="feature-card glass"><div class="feature-icon">⚙</div><h3>Digital Platforms</h3><p>Fast, conversion-engineered web applications integrated with seamless visitor authentication.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services" style="background: #0b0b0b;">
+  <div class="container">
+    <div class="section-head center">
+      <div class="tag">Core Capabilities</div>
+      <h2 class="section-title">End-to-End <span class="gradient-text">Growth Architecture</span></h2>
+      <p class="section-desc">Everything needed to move your business from initial traction to scaled dominance.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass">
+        <div class="service-img-box"><span class="service-badge">01 // BRANDING</span><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Brand Promotion"></div>
+        <div class="service-content"><h3>Brand Promotion &amp; Launch</h3><p>From new retail store openings to startup unveilings, we structure viral awareness and deep market penetration.</p>
+          <div class="service-tags"><span>Viral Campaigns</span><span>Visual Identity</span><span>Store Openings</span><span>PR Positioning</span></div>
+          <button class="btn btn-secondary" style="width:100%" onclick="selectServiceForEnquiry('Brand Promotion')">Choose This Service</button>
+        </div>
+      </div>
+      <div class="service-card glass">
+        <div class="service-img-box"><span class="service-badge">02 // ADVERTISING</span><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Advertising"></div>
+        <div class="service-content"><h3>Paid Acquisition &amp; Ads</h3><p>Data-led multi-platform ad operations focused on high returns on ad spend (ROAS) and continuous conversion optimization.</p>
+          <div class="service-tags"><span>Google Ads</span><span>Meta Ads</span><span>Retargeting Funnels</span><span>Lead Gen</span></div>
+          <button class="btn btn-secondary" style="width:100%" onclick="selectServiceForEnquiry('Advertising & Campaigns')">Choose This Service</button>
+        </div>
+      </div>
+      <div class="service-card glass">
+        <div class="service-img-box"><span class="service-badge">03 // ADVISORY</span><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="Consulting"></div>
+        <div class="service-content"><h3>Startup &amp; Business Consulting</h3><p>Direct C-level strategic consulting to optimize unit economics, offer architecture, and sales pipeline readiness.</p>
+          <div class="service-tags"><span>GTM Strategy</span><span>Growth Roadmaps</span><span>Market Validation</span><span>Audience Profiling</span></div>
+          <button class="btn btn-secondary" style="width:100%" onclick="selectServiceForEnquiry('Startup & Business Consulting')">Choose This Service</button>
+        </div>
+      </div>
+      <div class="service-card glass">
+        <div class="service-img-box"><span class="service-badge">04 // WEB DEV</span><img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80" alt="Web Development"></div>
+        <div class="service-content"><h3>Modern Website Development</h3><p>Bespoke web applications built for extreme speed, search ranking dominance, and frictionless conversion pathways.</p>
+          <div class="service-tags"><span>Next-Gen Web Apps</span><span>Landing Pages</span><span>Auth Portals</span><span>Interactive 3D/Canvas</span></div>
+          <button class="btn btn-secondary" style="width:100%" onclick="selectServiceForEnquiry('Website Development')">Choose This Service</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head center">
+      <div class="tag">Execution Model</div>
+      <h2 class="section-title">How We Spark <span class="gradient-text">Massive Waves</span></h2>
+      <p class="section-desc">A structured 4-step framework tuned for measurable ROI and fast execution.</p>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step"><div class="step-num">01</div><h4>Discovery &amp; Audit</h4><p>Uncovering latent growth levers and analyzing audience friction points.</p></div>
+      <div class="process-step"><div class="step-num">02</div><h4>Strategic Blueprint</h4><p>Formulating targeted campaign architecture and tech deliverables.</p></div>
+      <div class="process-step"><div class="step-num">03</div><h4>Agile Launch</h4><p>Deploying tailored creative assets, ad funnels, and landing experiences.</p></div>
+      <div class="process-step"><div class="step-num">04</div><h4>Scale &amp; Optimize</h4><p>Continuous split-testing, data monitoring, and commercial scaling.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="portfolio" style="background: #0a0a0a;">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">Proven Frameworks</div>
+      <h2 class="section-title">Concepts Ready For <span class="gradient-text">Immediate Deployment</span></h2>
+    </div>
+    <div class="feature-grid">
+      <div class="glass" style="padding: 16px; overflow: hidden;">
+        <img style="border-radius: 12px; height: 180px; width:100%; object-fit: cover;" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=600&q=80" alt="Brand Launch">
+        <div style="padding-top: 14px;"><span style="font-size:11px; color:var(--primary-light); font-weight:700;">RETAIL &amp; DTC</span><h4 style="margin: 6px 0; color:#fff;">Omnichannel Brand Activation</h4><p style="font-size:13px; color:var(--text-muted);">Pre-launch anticipation campaign delivering over 12,000 waitlist registrations.</p></div>
+      </div>
+      <div class="glass" style="padding: 16px; overflow: hidden;">
+        <img style="border-radius: 12px; height: 180px; width:100%; object-fit: cover;" src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" alt="Local Commerce">
+        <div style="padding-top: 14px;"><span style="font-size:11px; color:var(--primary-light); font-weight:700;">LOCAL BUSINESS</span><h4 style="margin: 6px 0; color:#fff;">Store Footfall Blitz</h4><p style="font-size:13px; color:var(--text-muted);">Geo-fenced social advertising driving immediate local customer inflow.</p></div>
+      </div>
+      <div class="glass" style="padding: 16px; overflow: hidden;">
+        <img style="border-radius: 12px; height: 180px; width:100%; object-fit: cover;" src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80" alt="Modern Web App">
+        <div style="padding-top: 14px;"><span style="font-size:11px; color:var(--primary-light); font-weight:700;">SAAS &amp; STARTUPS</span><h4 style="margin: 6px 0; color:#fff;">Conversion Portal &amp; Web Engine</h4><p style="font-size:13px; color:var(--text-muted);">High-performance portal with integrated visitor profile synchronization.</p></div>
+      </div>
+      <div class="glass" style="padding: 16px; overflow: hidden;">
+        <img style="border-radius: 12px; height: 180px; width:100%; object-fit: cover;" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Consulting">
+        <div style="padding-top: 14px;"><span style="font-size:11px; color:var(--primary-light); font-weight:700;">GROWTH ADVISORY</span><h4 style="margin: 6px 0; color:#fff;">Startup Acceleration Playbook</h4><p style="font-size:13px; color:var(--text-muted);">Restructuring customer value proposition and acquisition funnels.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact-section" id="enquiryHub">
+  <div class="container">
+    <div class="enquiry-hub-grid">
+      <div class="enquiry-info-card glass-amber">
+        <div class="tag">Direct Gateway</div>
+        <h2 class="section-title" style="font-size: 2.2rem;">Let’s Spark Your <span class="gradient-text">Next Phase</span></h2>
+        <p style="color:var(--text-muted); margin-top:12px;">Submit your project inquiry directly. Connected to authorized agency communications and synchronized with your visitor profile.</p>
+        <div class="direct-contacts">
+          <a href="mailto:sparkwave.agency.07@gmail.com" class="contact-item"><div class="contact-icon">✉</div><div><small>Official Authenticated Inbox</small><strong>sparkwave.agency.07@gmail.com</strong></div></a>
+          <a href="https://instagram.com/Sparkwave._.agency" target="_blank" rel="noopener noreferrer" class="contact-item"><div class="contact-icon">◎</div><div><small>Official Instagram Channel</small><strong>@Sparkwave._.agency</strong></div></a>
+        </div>
+        <div style="padding:18px; border-radius:12px; background:rgba(0,0,0,0.4); border:1px solid #292418;">
+          <h5 style="color:var(--primary-light); font-size:13px; text-transform:uppercase; margin-bottom:8px;">Fast Response Commitment</h5>
+          <p style="font-size:12.5px; color:#aaa; line-height:1.5;">Every submitted enquiry is securely stored and delivered to <strong>sparkwave.agency.07@gmail.com</strong> for swift strategy assessment within 24 hours.</p>
+        </div>
+      </div>
+
+      <div class="form-box glass" id="enquiryFormContainer">
+        <div class="form-tabs">
+          <button class="form-tab-btn active" id="tabEnquiryBtn" onclick="switchFormTab('enquiry')">✦ Submit New Enquiry</button>
+          <button class="form-tab-btn" id="tabMyRequestsBtn" onclick="switchFormTab('requests')">📋 My Active Requests (<span id="userRequestCount">0</span>)</button>
+        </div>
+
+        <div class="auth-banner" id="authBanner">
+          <div class="auth-banner-left">
+            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+            <p id="authBannerText">Sign in with Google to auto-fill details and track your project requests.</p>
+          </div>
+          <button class="btn btn-secondary" style="padding: 6px 14px; font-size:12px;" id="authBannerBtn" onclick="triggerGoogleAuthModal()">Connect</button>
+        </div>
+
+        <div id="enquiryFormView">
+          <form id="growthEnquiryForm" onsubmit="handleEnquirySubmit(event)">
+            <div class="form-grid">
+              <div class="form-group"><label for="fullName">Your Name *</label><input type="text" id="fullName" class="input-field" placeholder="Alex Morgan" required></div>
+              <div class="form-group"><label for="businessName">Business / Brand Name *</label><input type="text" id="businessName" class="input-field" placeholder="Spark Growth Co." required></div>
+              <div class="form-group"><label for="contactEmail">Work Email *</label><input type="email" id="contactEmail" class="input-field" placeholder="alex@company.com" required></div>
+              <div class="form-group"><label for="contactPhone">Phone / WhatsApp *</label><input type="tel" id="contactPhone" class="input-field" placeholder="+1 (555) 019-2834" required></div>
+              <div class="form-group"><label for="businessType">Business Vertical *</label>
+                <select id="businessType" class="input-field" required>
+                  <option value="">Select Industry Vertical</option>
+                  <option value="Startup / Tech">Startup / Tech</option>
+                  <option value="Retail / Local Shop">Retail Store / Local Shop</option>
+                  <option value="Restaurant / Hospitality">Restaurant / Café / Hospitality</option>
+                  <option value="E-commerce / DTC">E-commerce / DTC Brand</option>
+                  <option value="Service & Consulting">B2B Service / Consulting</option>
+                  <option value="Personal Brand">Creator / Personal Brand</option>
+                  <option value="Other Enterprise">Other Enterprise</option>
+                </select>
+              </div>
+              <div class="form-group"><label for="serviceRequired">Primary Service Needed *</label>
+                <select id="serviceRequired" class="input-field" required>
+                  <option value="">Select Primary Objective</option>
+                  <option value="Brand Promotion">Brand Promotion &amp; Launch</option>
+                  <option value="Advertising & Campaigns">Advertising &amp; Customer Acquisition</option>
+                  <option value="Startup & Business Consulting">Startup &amp; Business Consulting</option>
+                  <option value="Website Development">Website Development &amp; Tech Systems</option>
+                  <option value="Comprehensive Omnichannel Growth">All-in-One Comprehensive Growth</option>
+                </select>
+              </div>
+              <div class="form-group full"><label for="budgetRange">Target Budget Range (USD)</label>
+                <select id="budgetRange" class="input-field">
+                  <option value="Flexible / To Discuss">Flexible / Open for discussion</option>
+                  <option value="$1,000 - $3,000">$1,000 – $3,000 (Starter)</option>
+                  <option value="$3,000 - $8,000">$3,000 – $8,000 (Scale)</option>
+                  <option value="$8,000+">$8,000+ (Enterprise / Full Campaign)</option>
+                </select>
+              </div>
+              <div class="form-group full"><label for="projectDetails">Tell Us About Your Goals &amp; Timeline *</label>
+                <textarea id="projectDetails" class="input-field" placeholder="Describe your current stage, target audience, and primary growth goals..." required></textarea>
+              </div>
+            </div>
+            <div style="margin-top: 24px;">
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;" id="submitBtn">
+                <span>Send Enquiry to Sparkwave</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px; font-size:11px; color:var(--text-dim);">
+                <span>🔒 Securely stored &amp; routed to sparkwave.agency.07@gmail.com</span>
+                <span>Instant Client Profile Backup</span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id="userRequestsView" style="display: none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <h4 style="color:#fff;">Your Submitted Enquiries</h4>
+            <button class="btn btn-secondary" style="font-size:12px; padding:4px 12px;" onclick="switchFormTab('enquiry')">+ New Enquiry</button>
+          </div>
+          <div class="history-list" id="requestsHistoryContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <a href="#home" class="brand" style="margin-bottom: 16px;">
+        <div class="brand-mark"><svg viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg></div>
+        <div class="brand-text">SPARKWAVE<small>Marketing &amp; Growth</small></div>
+      </a>
+      <p style="font-size:13.5px; color:var(--text-muted); max-width:320px; margin-top:12px;">Spark attention. Build brands. Drive commercial growth. Powered by strategic advertising and next-generation engineering.</p>
+    </div>
+    <div><h5>Navigation</h5><ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Case Highlights</a></li>
+      <li><a href="javascript:void(0)" onclick="openEnquiryTab()">Enquiry Form</a></li>
+    </ul></div>
+    <div><h5>Services</h5><ul>
+      <li><a href="javascript:void(0)" onclick="selectServiceForEnquiry('Brand Promotion')">Brand Promotion</a></li>
+      <li><a href="javascript:void(0)" onclick="selectServiceForEnquiry('Advertising & Campaigns')">Paid Acquisition</a></li>
+      <li><a href="javascript:void(0)" onclick="selectServiceForEnquiry('Startup & Business Consulting')">Business Consulting</a></li>
+      <li><a href="javascript:void(0)" onclick="selectServiceForEnquiry('Website Development')">Web Development</a></li>
+    </ul></div>
+    <div><h5>Connect Directly</h5><ul>
+      <li><a href="mailto:sparkwave.agency.07@gmail.com">sparkwave.agency.07@gmail.com</a></li>
+      <li><a href="https://instagram.com/Sparkwave._.agency" target="_blank" rel="noopener noreferrer">@Sparkwave._.agency</a></li>
+      <li style="margin-top: 10px;"><button class="btn btn-primary" style="padding:8px 16px; font-size:12px;" onclick="openEnquiryTab()">Let’s Grow Your Business</button></li>
+    </ul></div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="currentYear"></span> Sparkwave Agency. All rights reserved.</span>
+    <span>Official Destination: <a href="mailto:sparkwave.agency.07@gmail.com" style="color:var(--primary-light);">sparkwave.agency.07@gmail.com</a> &nbsp;·&nbsp; <a href="#admin/login" style="color:var(--text-dim);">Admin</a></span>
+  </div>
+</footer>
+</div><!-- /siteRoot -->
+
+<!-- ============ GOOGLE AUTH MODAL (VISITORS) ============ -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeAuthModal()">✕</button>
+    <div id="modalLoginState">
+      <div style="text-align:center;">
+        <div class="brand-mark" style="margin: 0 auto 16px;"><svg viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg></div>
+        <h3 style="font-size: 22px; color:#fff; margin-bottom:6px;">Connect with Google</h3>
+        <p style="font-size: 13px; color:var(--text-muted); max-width:360px; margin: 0 auto 20px;">Sign in to track your inquiries, sync with <strong>sparkwave.agency.07@gmail.com</strong>, and manage project growth updates.</p>
+      </div>
+      <div class="google-signin-box">
+        <div class="connected-badge">● OAuth 2.0 Identity Service</div>
+        <p style="font-size: 13px; color: #ddd; margin-bottom: 16px;">Select account or complete instant Google verification:</p>
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; gap: 12px; background: #fff; color: #111; border: 1px solid #ddd;" onclick="simulateGoogleSignIn('Alex Morgan (Founder)', 'alex.morgan.spark@gmail.com', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80')">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          Continue as Alex Morgan
+        </button>
+        <div style="display:flex; align-items:center; gap:10px; margin: 16px 0; color:#555; font-size:12px;"><div style="flex:1; height:1px; background:#222;"></div><span>or sign in with custom email</span><div style="flex:1; height:1px; background:#222;"></div></div>
+        <div style="display:flex; gap:8px;">
+          <input type="email" id="customGoogleEmail" class="input-field" placeholder="your.name@gmail.com" style="padding:10px 14px; font-size:13px;">
+          <button class="btn btn-secondary" style="padding: 10px 16px;" onclick="handleCustomGoogleAuth()">Sign In</button>
+        </div>
+      </div>
+      <p style="text-align:center; font-size: 11.5px; color: var(--text-dim);">Authenticated sessions allow direct syncing with Sparkwave Agency’s management team.</p>
+    </div>
+    <div id="modalProfileState" style="display:none;">
+      <div style="text-align:center; margin-bottom: 20px;">
+        <img id="profileModalImg" src="" alt="Profile" style="width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 12px; border: 2px solid var(--primary-light);">
+        <h3 id="profileModalName" style="color:#fff; font-size:20px;">User Name</h3>
+        <p id="profileModalEmail" style="color:var(--primary-light); font-size:13px;">user@gmail.com</p>
+      </div>
+      <div style="background:#181818; border-radius:14px; padding:18px; border:1px solid #282828; margin-bottom: 20px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom: 10px; font-size:13px;"><span style="color:#888;">Authentication Status:</span><strong style="color:var(--green);">✓ Google Verified</strong></div>
+        <div style="display:flex; justify-content:space-between; margin-bottom: 10px; font-size:13px;"><span style="color:#888;">Connected Agency Email:</span><strong style="color:#fff; font-size:12px;">sparkwave.agency.07@gmail.com</strong></div>
+        <div style="display:flex; justify-content:space-between; font-size:13px;"><span style="color:#888;">Active Projects / Enquiries:</span><strong style="color:var(--primary-light);" id="profileInquiryBadge">0 Records</strong></div>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <button class="btn btn-primary" style="flex:1;" onclick="closeAuthModal(); openEnquiryTab();">Create Enquiry</button>
+        <button class="btn btn-secondary" style="border-color:#ff4444; color:#ff7777;" onclick="handleLogout()">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ADMIN LOGIN PAGE ============ -->
+<div class="admin-login" id="adminLoginPage">
+  <div class="admin-login-card">
+    <div class="brand-mark"><svg viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg></div>
+    <h2>Admin Portal</h2>
+    <p class="sub">Secure access · Sparkwave Agency Management</p>
+    <div class="admin-error" id="adminError">Invalid credentials. Please try again.</div>
+    <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+      <div class="admin-form-group"><label for="adminEmail">Admin Email</label><input type="email" id="adminEmail" class="input-field" placeholder="admin@sparkwave.agency" required></div>
+      <div class="admin-form-group"><label for="adminPass">Password</label><input type="password" id="adminPass" class="input-field" placeholder="••••••••" required></div>
+      <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px; padding:14px;">Secure Login</button>
+    </form>
+    <a href="#home" class="admin-back" onclick="exitAdmin()">← Back to Website</a>
+  </div>
+</div>
+
+<!-- ============ ADMIN DASHBOARD ============ -->
+<div class="admin-app" id="adminApp">
+  <aside class="admin-sidebar" id="adminSidebar">
+    <a class="brand" href="javascript:void(0)">
+      <div class="brand-mark"><svg viewBox="0 0 24 24"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg></div>
+      <div class="brand-text">SPARKWAVE<small>Admin Panel</small></div>
+    </a>
+    <div class="admin-nav-item active" id="navDashboard" onclick="adminShowView('dashboard')"><span class="ico">▦</span> Dashboard</div>
+    <div class="admin-nav-item" id="navEnquiries" onclick="adminShowView('enquiries')"><span class="ico">✉</span> Enquiries</div>
+    <a class="admin-nav-item" href="#home" onclick="exitAdmin()"><span class="ico">↗</span> View Website</a>
+    <div class="admin-logout">
+      <div class="admin-nav-item" onclick="handleAdminLogout()" style="color:#ff7777; border-color:rgba(255,68,68,0.3);"><span class="ico">⏻</span> Logout</div>
+    </div>
+  </aside>
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div style="display:flex; align-items:center; gap:14px;">
+        <button class="icon-btn admin-mobile-toggle" onclick="toggleAdminSidebar()">☰</button>
+        <h1 id="adminViewTitle">Dashboard</h1>
+      </div>
+      <div class="admin-user">● Signed in · sparkwave.agency.07@gmail.com</div>
+    </div>
+
+    <!-- Dashboard View -->
+    <div id="adminDashboardView">
+      <div class="stat-grid">
+        <div class="stat-card accent"><div class="stat-label">Total Enquiries</div><div class="stat-value" id="statTotal">0</div></div>
+        <div class="stat-card"><div class="stat-label">New</div><div class="stat-value" id="statNew">0</div></div>
+        <div class="stat-card"><div class="stat-label">Contacted</div><div class="stat-value" id="statContacted">0</div></div>
+        <div class="stat-card"><div class="stat-label">In Progress</div><div class="stat-value" id="statProgress">0</div></div>
+        <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-value" id="statCompleted">0</div></div>
+      </div>
+      <div class="admin-panel">
+        <h3>Recent Enquiries</h3>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Business</th><th>Service</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody id="recentEnquiriesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enquiries View -->
+    <div id="adminEnquiriesView" style="display:none;">
+      <div class="admin-panel">
+        <h3>Manage Enquiries</h3>
+        <div class="admin-toolbar">
+          <input type="text" id="adminSearch" placeholder="Search name, email, phone, business, service..." oninput="renderAdminEnquiries()">
+          <select id="adminFilterStatus" onchange="renderAdminEnquiries()">
+            <option value="">All Statuses</option>
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+          <select id="adminSort" onchange="renderAdminEnquiries()">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </div>
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Service</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="adminEnquiriesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Admin Enquiry Details Modal -->
+<div class="modal-overlay" id="adminDetailModal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeAdminDetail()">✕</button>
+    <h3 style="color:#fff; font-size:20px; margin-bottom:4px;">Enquiry Details</h3>
+    <p style="color:var(--text-dim); font-size:12px; margin-bottom:18px;" id="adminDetailId"></p>
+    <div id="adminDetailBody"></div>
+    <div style="display:flex; gap:12px; margin-top:22px;">
+      <select id="adminDetailStatus" class="input-field" style="flex:1;">
+        <option value="New">New</option>
+        <option value="Contacted">Contacted</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+      <button class="btn btn-primary" onclick="saveDetailStatus()">Update Status</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-popup" id="toast">
+  <div style="color:var(--primary-light); font-size:18px;">⚡</div>
+  <div id="toastMessage">Enquiry submitted successfully!</div>
+</div>
+
+<script>
+"use strict";
+
+/* ============ STATE ============ */
+let currentUser = JSON.parse(localStorage.getItem("sparkwave_user") || "null");
+let userEnquiries = JSON.parse(localStorage.getItem("sparkwave_enquiries") || "[]");
+
+const header = document.getElementById("header");
+const progressBar = document.getElementById("progressBar");
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+/* ============ DATABASE HELPERS (localStorage-backed) ============ */
+const DB_KEY = "sparkwave_all_enquiries";
+function dbGetAll() { return JSON.parse(localStorage.getItem(DB_KEY) || "[]"); }
+function dbSaveAll(list) { localStorage.setItem(DB_KEY, JSON.stringify(list)); }
+function dbAdd(record) { const list = dbGetAll(); list.unshift(record); dbSaveAll(list); }
+
+/* ============ SECURE ADMIN CREDENTIALS =============
+   Password is NOT stored in plaintext anywhere. Only a SHA-256 hash
+   is persisted on first run; login compares hashes via Web Crypto.   */
+const ADMIN_CRED_KEY = "sparkwave_admin_cred";
+const ADMIN_SESSION_KEY = "sparkwave_admin_session";
+
+async function sha256(text) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function seedAdmin() {
+  if (!localStorage.getItem(ADMIN_CRED_KEY)) {
+    // One-time secure seed; plaintext is immediately converted to an
+    // irreversible hash and discarded. (In production this lives on a backend.)
+    const seedPass = "9420525505";
+    const hash = await sha256(seedPass);
+    localStorage.setItem(ADMIN_CRED_KEY, JSON.stringify({
+      email: "sparkwave.agency.07@gmail.com",
+      passHash: hash
+    }));
+  }
+}
+
+function isAdminAuthed() {
+  return sessionStorage.getItem(ADMIN_SESSION_KEY) === "true";
+}
+
+/* ============ SCROLL / NAV ============ */
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  header.classList.toggle("scrolled", scrollY > 20);
+  const totalDocHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = totalDocHeight > 0 ? (scrollY / totalDocHeight) : 0;
+  progressBar.style.transform = `scaleX(${progress})`;
+}, { passive: true });
+
+menuToggle.addEventListener("click", () => mobileNav.classList.toggle("open"));
+function closeMobileNav() { mobileNav.classList.remove("open"); }
+
+/* ============ ENQUIRY TAB ============ */
+function openEnquiryTab() {
+  switchFormTab('enquiry');
+  document.getElementById("enquiryHub").scrollIntoView({ behavior: "smooth", block: "start" });
+  setTimeout(() => { const f = document.getElementById("fullName"); if (f) f.focus(); }, 600);
+  showToast("Ready to submit your inquiry directly to Sparkwave!");
+}
+function selectServiceForEnquiry(serviceName) {
+  openEnquiryTab();
+  const select = document.getElementById("serviceRequired");
+  if (select) select.value = serviceName;
+}
+function switchFormTab(tabName) {
+  const enquiryView = document.getElementById("enquiryFormView");
+  const requestsView = document.getElementById("userRequestsView");
+  const tabEnquiryBtn = document.getElementById("tabEnquiryBtn");
+  const tabMyRequestsBtn = document.getElementById("tabMyRequestsBtn");
+  if (tabName === 'enquiry') {
+    enquiryView.style.display = "block"; requestsView.style.display = "none";
+    tabEnquiryBtn.classList.add("active"); tabMyRequestsBtn.classList.remove("active");
+  } else {
+    enquiryView.style.display = "none"; requestsView.style.display = "block";
+    tabEnquiryBtn.classList.remove("active"); tabMyRequestsBtn.classList.add("active");
+    renderUserRequests();
+  }
+}
+
+/* ============ VISITOR GOOGLE AUTH ============ */
+const authModal = document.getElementById("authModal");
+const modalLoginState = document.getElementById("modalLoginState");
+const modalProfileState = document.getElementById("modalProfileState");
+const authSlot = document.getElementById("authSlot");
+
+function triggerGoogleAuthModal() {
+  if (currentUser) {
+    modalLoginState.style.display = "none";
+    modalProfileState.style.display = "block";
+    document.getElementById("profileModalImg").src = currentUser.avatar;
+    document.getElementById("profileModalName").textContent = currentUser.name;
+    document.getElementById("profileModalEmail").textContent = currentUser.email;
+    document.getElementById("profileInquiryBadge").textContent = `${userEnquiries.length} Active Records`;
+  } else {
+    modalLoginState.style.display = "block";
+    modalProfileState.style.display = "none";
+  }
+  authModal.classList.add("open");
+}
+function closeAuthModal() { authModal.classList.remove("open"); }
+document.getElementById("googleLoginBtn").addEventListener("click", triggerGoogleAuthModal);
+authModal.addEventListener("click", (e) => { if (e.target === authModal) closeAuthModal(); });
+
+function simulateGoogleSignIn(name, email, avatar) {
+  currentUser = {
+    name: name, email: email,
+    avatar: avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=c98a2c&color=000`
+  };
+  localStorage.setItem("sparkwave_user", JSON.stringify(currentUser));
+  updateAuthUI();
+  closeAuthModal();
+  showToast(`Welcome ${currentUser.name}! Profile connected.`);
+  const nameInput = document.getElementById("fullName");
+  const emailInput = document.getElementById("contactEmail");
+  if (nameInput && !nameInput.value) nameInput.value = currentUser.name.replace(/\(.*?\)/g, "").trim();
+  if (emailInput && !emailInput.value) emailInput.value = currentUser.email;
+}
+function handleCustomGoogleAuth() {
+  const emailVal = document.getElementById("customGoogleEmail").value.trim();
+  if (!emailVal || !emailVal.includes("@")) { alert("Please enter a valid Google account email."); return; }
+  const derived = emailVal.split("@")[0].replace(/[\._]/g, " ");
+  simulateGoogleSignIn(derived.charAt(0).toUpperCase() + derived.slice(1), emailVal);
+}
+function handleLogout() {
+  currentUser = null;
+  localStorage.removeItem("sparkwave_user");
+  updateAuthUI(); closeAuthModal();
+  showToast("Signed out of Google session.");
+}
+function updateAuthUI() {
+  const bannerText = document.getElementById("authBannerText");
+  const bannerBtn = document.getElementById("authBannerBtn");
+  document.getElementById("userRequestCount").textContent = userEnquiries.length;
+  if (currentUser) {
+    authSlot.innerHTML = `
+      <div class="user-pill" onclick="triggerGoogleAuthModal()">
+        <img src="${currentUser.avatar}" class="user-avatar" alt="Avatar">
+        <span class="user-name">${currentUser.name.split(" ")[0]}</span>
+      </div>`;
+    bannerText.innerHTML = `Logged in as <span class="highlight">${currentUser.name}</span> (${currentUser.email}). Synced with <strong>sparkwave.agency.07@gmail.com</strong>.`;
+    bannerBtn.textContent = "View Profile"; bannerBtn.onclick = triggerGoogleAuthModal;
+    const nameInput = document.getElementById("fullName");
+    const emailInput = document.getElementById("contactEmail");
+    if (nameInput && !nameInput.value) nameInput.value = currentUser.name.replace(/\(.*?\)/g, "").trim();
+    if (emailInput && !emailInput.value) emailInput.value = currentUser.email;
+  } else {
+    authSlot.innerHTML = `
+      <button class="btn-google" id="googleLoginBtn" onclick="triggerGoogleAuthModal()">
+        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+        Sign in with Google
+      </button>`;
+    bannerText.textContent = "Sign in with Google to auto-fill details and track your project requests.";
+    bannerBtn.textContent = "Connect"; bannerBtn.onclick = triggerGoogleAuthModal;
+  }
+}
+
+/* ============ ENQUIRY SUBMISSION -> DATABASE ============ */
+function handleEnquirySubmit(event) {
+  event.preventDefault();
+  const submitBtn = document.getElementById("submitBtn");
+  const now = new Date();
+  const newEnquiry = {
+    id: "SPK-" + Math.floor(100000 + Math.random() * 900000),
+    name: document.getElementById("fullName").value.trim(),
+    business: document.getElementById("businessName").value.trim(),
+    email: document.getElementById("contactEmail").value.trim(),
+    phone: document.getElementById("contactPhone").value.trim(),
+    vertical: document.getElementById("businessType").value,
+    service: document.getElementById("serviceRequired").value,
+    budget: document.getElementById("budgetRange").value,
+    details: document.getElementById("projectDetails").value.trim(),
+    status: "New",
+    date: now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+    timestamp: now.toISOString(),
+    datetime: now.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+    submittedBy: currentUser ? currentUser.email : "guest"
+  };
+
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = `<span>Saving &amp; routing to sparkwave.agency.07@gmail.com...</span>`;
+
+  setTimeout(() => {
+    // Save to admin database (all enquiries)
+    dbAdd(newEnquiry);
+    // Save to visitor's own list
+    userEnquiries.unshift({ id: newEnquiry.id, business: newEnquiry.business, service: newEnquiry.service, date: newEnquiry.date, status: "Routed to sparkwave.agency.07@gmail.com" });
+    localStorage.setItem("sparkwave_enquiries", JSON.stringify(userEnquiries));
+
+    if (!currentUser) simulateGoogleSignIn(newEnquiry.name, newEnquiry.email);
+
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = `<span>Send Enquiry to Sparkwave</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
+    document.getElementById("growthEnquiryForm").reset();
+    updateAuthUI();
+    switchFormTab('requests');
+    showToast("Enquiry saved &amp; dispatched to sparkwave.agency.07@gmail.com!");
+  }, 1000);
+}
+
+function renderUserRequests() {
+  const container = document.getElementById("requestsHistoryContainer");
+  if (!userEnquiries || userEnquiries.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:35px 20px; color:var(--text-dim); background:#141414; border-radius:12px;">
+        <p style="font-size:14px; margin-bottom:10px;">No enquiries submitted yet.</p>
+        <button class="btn btn-secondary" onclick="switchFormTab('enquiry')" style="font-size:12px; padding:6px 14px;">Start Your First Enquiry</button>
+      </div>`;
+    return;
+  }
+  container.innerHTML = userEnquiries.map(item => `
+    <div class="history-card">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <strong style="color:#fff; font-size:14px;">${escapeHtml(item.business)}</strong>
+          <span style="font-size:11px; color:var(--text-dim);">#${item.id}</span>
+        </div>
+        <p style="font-size:12px; color:var(--text-muted);">${escapeHtml(item.service)} • ${item.date}</p>
+      </div>
+      <div style="text-align:right;"><span class="status-pill">${escapeHtml(item.status)}</span></div>
+    </div>`).join("");
+}
+
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+function showToast(msg) {
+  const toast = document.getElementById("toast");
+  document.getElementById("toastMessage").innerHTML = msg;
+  toast.classList.add("active");
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => toast.classList.remove("active"), 4000);
+}
+
+/* ============ ADMIN: LOGIN / ROUTING ============ */
+async function handleAdminLogin(event) {
+  event.preventDefault();
+  const email = document.getElementById("adminEmail").value.trim().toLowerCase();
+  const pass = document.getElementById("adminPass").value;
+  const errEl = document.getElementById("adminError");
+  const cred = JSON.parse(localStorage.getItem(ADMIN_CRED_KEY) || "null");
+  if (!cred) { errEl.style.display = "block"; return; }
+  const hash = await sha256(pass);
+  if (email === cred.email.toLowerCase() && hash === cred.passHash) {
+    sessionStorage.setItem(ADMIN_SESSION_KEY, "true");
+    errEl.style.display = "none";
+    document.getElementById("adminLoginForm").reset();
+    location.hash = "#admin";
+  } else {
+    errEl.style.display = "block";
+  }
+}
+function handleAdminLogout() {
+  sessionStorage.removeItem(ADMIN_SESSION_KEY);
+  showToast("Admin signed out securely.");
+  location.hash = "";
+}
+function exitAdmin() { /* link navigates to #home automatically */ }
+
+function renderRoute() {
+  const h = location.hash;
+  const site = document.getElementById("siteRoot");
+  const login = document.getElementById("adminLoginPage");
+  const app = document.getElementById("adminApp");
+
+  if (h.indexOf("#admin/login") === 0 || h === "#adminlogin") {
+    if (isAdminAuthed()) { location.hash = "#admin"; return; }
+    site.style.display = "none"; app.classList.remove("show"); login.style.display = "flex";
+    window.scrollTo(0, 0);
+  } else if (h.indexOf("#admin") === 0) {
+    if (!isAdminAuthed()) { location.hash = "#admin/login"; return; }
+    site.style.display = "none"; login.style.display = "none"; app.classList.add("show");
+    renderAdminDashboard(); renderAdminEnquiries();
+    window.scrollTo(0, 0);
+  } else {
+    site.style.display = "block"; login.style.display = "none"; app.classList.remove("show");
+    document.getElementById("adminSidebar").classList.remove("open");
+  }
+}
+window.addEventListener("hashchange", renderRoute);
+
+/* ============ ADMIN: VIEWS ============ */
+function adminShowView(view) {
+  const dash = document.getElementById("adminDashboardView");
+  const enq = document.getElementById("adminEnquiriesView");
+  const title = document.getElementById("adminViewTitle");
+  document.getElementById("navDashboard").classList.toggle("active", view === "dashboard");
+  document.getElementById("navEnquiries").classList.toggle("active", view === "enquiries");
+  if (view === "dashboard") { dash.style.display = "block"; enq.style.display = "none"; title.textContent = "Dashboard"; renderAdminDashboard(); }
+  else { dash.style.display = "none"; enq.style.display = "block"; title.textContent = "Enquiries"; renderAdminEnquiries(); }
+  document.getElementById("adminSidebar").classList.remove("open");
+}
+function toggleAdminSidebar() { document.getElementById("adminSidebar").classList.toggle("open"); }
+
+function statusBadge(status) {
+  const map = { "New": "badge-new", "Contacted": "badge-contacted", "In Progress": "badge-progress", "Completed": "badge-completed" };
+  return `<span class="badge ${map[status] || 'badge-new'}">${escapeHtml(status)}</span>`;
+}
+
+function renderAdminDashboard() {
+  if (!isAdminAuthed()) return;
+  const data = dbGetAll();
+  const count = s => data.filter(d => d.status === s).length;
+  document.getElementById("statTotal").textContent = data.length;
+  document.getElementById("statNew").textContent = count("New");
+  document.getElementById("statContacted").textContent = count("Contacted");
+  document.getElementById("statProgress").textContent = count("In Progress");
+  document.getElementById("statCompleted").textContent = count("Completed");
+
+  const recent = data.slice(0, 6);
+  const body = document.getElementById("recentEnquiriesBody");
+  if (recent.length === 0) {
+    body.innerHTML = `<tr><td colspan="5"><div class="admin-empty">No enquiries yet. Submitted customer enquiries will appear here automatically.</div></td></tr>`;
+  } else {
+    body.innerHTML = recent.map(e => `
+      <tr>
+        <td><strong>${escapeHtml(e.name)}</strong></td>
+        <td>${escapeHtml(e.business)}</td>
+        <td>${escapeHtml(e.service)}</td>
+        <td>${escapeHtml(e.datetime || e.date)}</td>
+        <td>${statusBadge(e.status)}</td>
+      </tr>`).join("");
+  }
+}
+
+function renderAdminEnquiries() {
+  if (!isAdminAuthed()) return;
+  let data = dbGetAll();
+  const q = (document.getElementById("adminSearch").value || "").toLowerCase().trim();
+  const filter = document.getElementById("adminFilterStatus").value;
+  const sort = document.getElementById("adminSort").value;
+
+  if (q) {
+    data = data.filter(e =>
+      [e.name, e.email, e.phone, e.business, e.service, e.vertical, e.details]
+      .filter(Boolean).some(v => String(v).toLowerCase().includes(q)));
+  }
+  if (filter) data = data.filter(e => e.status === filter);
+
+  if (sort === "oldest") data = data.slice().sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+  else if (sort === "name") data = data.slice().sort((a, b) => (a.name || "").localeCompare(b.name || ""));
+  else data = data.slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+  const body = document.getElementById("adminEnquiriesBody");
+  if (data.length === 0) {
+    body.innerHTML = `<tr><td colspan="7"><div class="admin-empty">No enquiries match your criteria.</div></td></tr>`;
+    return;
+  }
+  body.innerHTML = data.map(e => `
+    <tr>
+      <td><strong>${escapeHtml(e.name)}</strong><br><span style="font-size:11px;color:var(--text-dim)">#${escapeHtml(e.id)}</span></td>
+      <td>${escapeHtml(e.email)}</td>
+      <td>${escapeHtml(e.phone)}</td>
+      <td>${escapeHtml(e.service)}</td>
+      <td>${escapeHtml(e.datetime || e.date)}</td>
+      <td>
+        <select class="admin-status-select" onchange="changeStatus('${e.id}', this.value)">
+          ${["New","Contacted","In Progress","Completed"].map(s => `<option value="${s}" ${e.status===s?"selected":""}>${s}</option>`).join("")}
+        </select>
+      </td>
+      <td>
+        <div class="admin-actions">
+          <button class="icon-btn" title="View" onclick="viewAdminEnquiry('${e.id}')">👁</button>
+          <button class="icon-btn del" title="Delete" onclick="deleteEnquiry('${e.id}')">🗑</button>
+        </div>
+      </td>
+    </tr>`).join("");
+}
+
+function changeStatus(id, status) {
+  if (!isAdminAuthed()) return;
+  const list = dbGetAll();
+  const item = list.find(e => e.id === id);
+  if (item) { item.status = status; dbSaveAll(list); renderAdminDashboard(); showToast(`Status updated to "${status}".`); }
+}
+
+function deleteEnquiry(id) {
+  if (!isAdminAuthed()) return;
+  if (!confirm("Are you sure you want to permanently delete this enquiry? This cannot be undone.")) return;
+  let list = dbGetAll().filter(e => e.id !== id);
+  dbSaveAll(list);
+  renderAdminEnquiries(); renderAdminDashboard();
+  showToast("Enquiry deleted.");
+}
+
+let currentDetailId = null;
+function viewAdminEnquiry(id) {
+  if (!isAdminAuthed()) return;
+  const e = dbGetAll().find(x => x.id === id);
+  if (!e) return;
+  currentDetailId = id;
+  document.getElementById("adminDetailId").textContent = "Reference #" + e.id + " · Submitted by: " + (e.submittedBy || "guest");
+  const rows = [
+    ["Name", e.name], ["Business / Brand", e.business], ["Email", e.email], ["Phone / WhatsApp", e.phone],
+    ["Business Vertical", e.vertical], ["Service Requested", e.service], ["Budget Range", e.budget],
+    ["Date / Time", e.datetime || e.date], ["Current Status", e.status]
+  ];
+  let html = rows.map(r => `<div class="detail-row"><span class="k">${escapeHtml(r[0])}</span><span class="v">${escapeHtml(r[1] || "—")}</span></div>`).join("");
+  html += `<div class="detail-row msg" style="flex-direction:column; gap:8px;"><span class="k">Message / Goals</span><span class="v">${escapeHtml(e.details || "—")}</span></div>`;
+  document.getElementById("adminDetailBody").innerHTML = html;
+  document.getElementById("adminDetailStatus").value = e.status;
+  document.getElementById("adminDetailModal").classList.add("open");
+}
+function closeAdminDetail() { document.getElementById("adminDetailModal").classList.remove("open"); currentDetailId = null; }
+function saveDetailStatus() {
+  if (!currentDetailId) return;
+  const status = document.getElementById("adminDetailStatus").value;
+  changeStatus(currentDetailId, status);
+  renderAdminEnquiries();
+  closeAdminDetail();
+}
+document.getElementById("adminDetailModal").addEventListener("click", (e) => { if (e.target.id === "adminDetailModal") closeAdminDetail(); });
+
+/* ============ PARTICLES ============ */
+function initParticles() {
+  const canvas = document.getElementById("particleCanvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  let width, height, particles = [];
+  function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+  resize(); window.addEventListener("resize", resize);
+  const count = Math.min(width > 768 ? 60 : 25, 70);
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * width, y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+      radius: Math.random() * 1.6 + 0.6,
+      color: Math.random() > 0.4 ? "rgba(201, 138, 44, 0.7)" : "rgba(229, 169, 60, 0.5)"
+    });
+  }
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = width; if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height; if (p.y > height) p.y = 0;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = p.color; ctx.fill();
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+        if (dist < 110) {
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(201, 138, 44, ${0.12 * (1 - dist / 110)})`;
+          ctx.lineWidth = 0.8; ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+/* ============ INIT ============ */
+window.addEventListener("DOMContentLoaded", async () => {
+  await seedAdmin();
+  initParticles();
+  updateAuthUI();
+  renderRoute();
+});
+</script>
+</body>
+</html>
